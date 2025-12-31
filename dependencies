@@ -12,4 +12,11 @@ wofi
 nm-connection-editor
 blueman
 pavucontrol
+wl-clipboard
+brightnessctl
+playerctl
+pipewire
+pipewire-pulse
+wireplumber
 nautilus
+ttf-iosevkaterm-nerd
