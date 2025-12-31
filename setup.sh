@@ -8,15 +8,13 @@ CONFIG_DEST="$HOME/.config"
 echo "Running package installer..."
 "$SCRIPT_DIR/packageInstaller.sh"
 
-echo "Moving configs from $CONFIG_SRC to $CONFIG_DEST..."
-mkdir -p "$CONFIG_DEST"
-shopt -s dotglob nullglob
-configs=("$CONFIG_SRC"/*)
+echo "Enabling services..."
+"$SCRIPT_DIR/services.sh"
 
-if [[ ${#configs[@]} -eq 0 ]]; then
-  echo "No configs found to move."
-  exit 0
-fi
+echo "Applying configs..."
+"$SCRIPT_DIR/configs.sh"
 
-mv -t "$CONFIG_DEST" "${configs[@]}"
+echo "Installing Vim plugins..."
+vim +PlugInstall +qall
+
 echo "Setup complete."

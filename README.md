@@ -25,11 +25,14 @@ Configs included
 - `config/dunst/`: Notification theming (top-center layout, framed, slight transparency).
 - `config/wofi/`: Launcher styling.
 - `config/input-remapper/`: Input remapping profiles.
+- `.vimrc`: Copied to your home for Vim setup (vim-plug plugins installed during setup).
 
 Scripts
 -------
 - `packageInstaller.sh`: On Arch, installs `base-devel`, `git`, and `yay` with `pacman`, then installs everything listed in `dependencies` via `yay` (ignores blank/comment lines).
-- `setup.sh`: Runs `packageInstaller.sh`, ensures `~/.config` exists, then moves everything from `dotfiles/config/` into `~/.config/`.
+- `services.sh`: Enables and starts user services (`pipewire`, `pipewire-pulse`, `wireplumber`, `swayosd`, `awww-daemon`) and the system `input-remapper` service (requires sudo). Skips gracefully if missing or no user systemd.
+- `configs.sh`: Moves everything from `dotfiles/config/` into `~/.config/` and copies `.vimrc` to your home directory.
+- `setup.sh`: Runs `packageInstaller.sh`, then `services.sh`, then `configs.sh`, and finishes with `vim +PlugInstall +qall` to install Vim plugins.
 
 Usage
 -----
