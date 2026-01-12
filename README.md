@@ -24,15 +24,17 @@ Configs included
 - `config/waybar/`: Status bar styles and layout.
 - `config/dunst/`: Notification theming (top-center layout, framed, slight transparency).
 - `config/wofi/`: Launcher styling.
-- `config/input-remapper/`: Input remapping profiles.
+- `config/input-remapper-2/`: Input remapping profiles.
 - `.vimrc`: Copied to your home for Vim setup (vim-plug plugins installed during setup).
+- `.zshrc`: Copied to your home with a basic Oh My Zsh configuration (git plugin, robbyrussell theme).
 
 Scripts
 -------
 - `packageInstaller.sh`: On Arch, installs `base-devel`, `git`, and `yay` with `pacman`, then installs everything listed in `dependencies` via `yay` (ignores blank/comment lines).
-- `services.sh`: Enables and starts user services (`pipewire`, `pipewire-pulse`, `wireplumber`, `swayosd`, `awww-daemon`) and the system `input-remapper` service (requires sudo). Skips gracefully if missing or no user systemd.
-- `configs.sh`: Moves everything from `dotfiles/config/` into `~/.config/` and copies `.vimrc` to your home directory.
-- `setup.sh`: Runs `packageInstaller.sh`, then `services.sh`, then `configs.sh`, and finishes with `vim +PlugInstall +qall` to install Vim plugins.
+- `inputRemapper.sh`: Adds the current user to the `input` group (if needed) and installs a polkit rule allowing `wheel` users to manage input-remapper.
+- `services.sh`: Enables and starts Hypr session user services/targets (`hypr-services.target`, `waybar`, `dunst`, `swayosd-server`, `awww-daemon`, `input-remapper-rat7`), core audio (`pipewire`, `pipewire-pulse`, `wireplumber`), and the system `input-remapper` service (requires sudo). Skips gracefully if missing or no user systemd.
+- `configs.sh`: Moves everything from `dotfiles/config/` into `~/.config/` and copies `.vimrc` and `.zshrc` to your home directory.
+- `setup.sh`: Runs `packageInstaller.sh`, installs Oh My Zsh, then `services.sh`, then `configs.sh`, and finishes with `vim +PlugInstall +qall` to install Vim plugins.
 
 Usage
 -----

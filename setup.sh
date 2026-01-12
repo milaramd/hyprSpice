@@ -8,6 +8,12 @@ CONFIG_DEST="$HOME/.config"
 echo "Running package installer..."
 "$SCRIPT_DIR/packageInstaller.sh"
 
+echo "Configuring input-remapper permissions..."
+"$SCRIPT_DIR/inputRemapper.sh"
+
+echo "Installing Oh My Zsh..."
+RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "Enabling services..."
 "$SCRIPT_DIR/services.sh"
 

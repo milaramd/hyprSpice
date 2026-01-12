@@ -1,0 +1,19 @@
+[Unit]
+Description=Input Remapper preset for Mad Catz R.A.T.7
+PartOf=hypr-services.target
+After=hypr-services.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/input-remapper-control --command start \
+  --device "Mad Catz Mad Catz R.A.T.7 Mouse" \
+  --preset "myPreset"
+ExecStop=/usr/bin/input-remapper-control --command stop \
+  --device "Mad Catz Mad Catz R.A.T.7 Mouse"
+TimeoutStartSec=10
+TimeoutStopSec=10
+
+[Install]
+WantedBy=hypr-services.target
+

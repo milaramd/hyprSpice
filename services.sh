@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# User-level targets/services to enable (Hypr session plus core daemons)
 USER_SERVICES=(
+  hypr-services.target
+  waybar.service
+  dunst.service
+  swayosd-server.service
+  awww-daemon.service
+  input-remapper-rat7.service
   pipewire.service
   pipewire-pulse.service
   wireplumber.service
-  swayosd.service
-  awww-daemon.service
 )
 
 SYSTEM_SERVICES=(

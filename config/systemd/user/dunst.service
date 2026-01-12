@@ -1,0 +1,14 @@
+[Unit]
+Description=Dunst notification daemon
+PartOf=hypr-services.target
+After=hypr-services.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/dunst
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=hypr-services.target
+

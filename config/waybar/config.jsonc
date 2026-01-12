@@ -41,7 +41,8 @@
   "clock": {
     "interval": 1,
     "format": "{:%d/%m - %H:%M}",  // YOUR FORMAT
-    "tooltip-format": "{:%A, %d %B %Y\n%H:%M:%S}"
+    "tooltip-format": "{:%A, %d %B %Y\n%H:%M:%S}",
+    "on-click": "gnome-calendar"
   },
   
   "cpu": {
