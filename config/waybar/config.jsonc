@@ -1,0 +1,129 @@
+{
+  // ---------------------------------------------------------
+  //  WAYBAR LAYOUT
+  // ---------------------------------------------------------
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "memory",
+    "network",
+    "bluetooth",
+    "pulseaudio", // or "wireplumber" depending on your system
+    "battery"
+  ],
+
+  // ---------------------------------------------------------
+  //  MODULE CONFIGURATION
+  // ---------------------------------------------------------
+
+  // Workspaces
+  "workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+
+  // Window title
+  "window": {
+    "max-length": 50,
+    "format": "{}"
+  },
+
+  // Center clock island
+  "clock": {
+    "interval": 1,
+    "format": "{:%d/%m - %H:%M}",  // YOUR FORMAT
+    "tooltip-format": "{:%A, %d %B %Y\n%H:%M:%S}",
+    "on-click": "gnome-calendar"
+  },
+  
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "  {percentage}%",
+    "tooltip": false
+  },
+  // WiFi / Network
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format": "Signal: {signalStrength}%\nIP: {ipaddr}",
+    "on-click": "nm-connection-editor"
+  },
+
+  "bluetooth": {
+    "format": "󰂯 {status}",
+    "format-on": "󰂯 ",
+    "format-no-controller": "󰇘 ",
+    "format-connected": "󰂱 {device_alias}",
+    "format-off": "󰂲 ",
+    "format-disabled": "󰂲 ",
+    "on-click": "blueman-manager"
+  },
+
+  // Volume (PulseAudio)
+  "pulseaudio": {
+    "format": "{icon} ",
+    "tooltip-format": "Volume: {volume}%",
+    "format-muted": "󰝟 ",
+    "format-icons": {
+      "0": "󰖁",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "pavucontrol"
+  },
+
+  // Battery
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["󰁺","󰁼","󰁾","󰂀","󰂂","󰁹"],
+    "format-plugged": "󰂄",
+    "tooltip-format": "{capacity}%"
+  },
+
+  // Bluetooth
+/*  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-off": " off",
+    "on-click": "blueman-manager"
+  },
+
+  // Volume (PulseAudio)
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+*/
+  // If you use WirePlumber instead of PulseAudio
+  // "wireplumber": { ... same config ... },
+
+  // ---------------------------------------------------------
+  //  GENERAL SETTINGS
+  // ---------------------------------------------------------
+  "layer": "top",
+  "position": "top"
+}
+

@@ -1,0 +1,80 @@
+[
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 277,
+                "origin_hash": "e7d83bcacda687d476a446b5df355e8d"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTMETA+KEY_LEFTALT+KEY_UP",
+        "name": "SideWheelForward",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 278,
+                "origin_hash": "e7d83bcacda687d476a446b5df355e8d"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTMETA+KEY_LEFTALT+KEY_DOWN",
+        "name": "SideWheelBackward",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 279,
+                "origin_hash": "e7d83bcacda687d476a446b5df355e8d"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "KEY_LEFTMETA",
+        "name": "TaskButton",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 280,
+                "origin_hash": "e7d83bcacda687d476a446b5df355e8d"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "",
+        "name": "RAT_Red",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 282,
+                "origin_hash": "e7d83bcacda687d476a446b5df355e8d"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "",
+        "name": "RAT_Purple",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 281,
+                "origin_hash": "e7d83bcacda687d476a446b5df355e8d"
+            }
+        ],
+        "target_uinput": "keyboard",
+        "output_symbol": "",
+        "name": "RAT_Blue",
+        "mapping_type": "key_macro"
+    }
+]

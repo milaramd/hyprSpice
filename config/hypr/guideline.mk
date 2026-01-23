@@ -1,0 +1,26 @@
+# Guides to modularize my hyprland.conf 
+
+## Folder structure
+
+hyprland.conf
+monitors/... (include monitor configurations)
+defaults/apps/... (things like $terminal = tilix, fileManager, menu, lock and browser)
+defaults/bindings/... ($mainMode, screenshot, etc)
+exec-once/.. (pretty self explanatory)
+visual/general/...
+visual/decoration/...
+visual/animations/...
+visual/windowrules/... (windowrules)
+visual/dwindle/...
+visual/master/...
+visual/misc/...
+input/input/...
+input/device/...
+bind/actions/... (mainMod, T and things of the sort that do things, include up to mainMod CTR, TAB)
+bind/workspace/... (workspace actions)
+bind/window/... (the two bindm)
+bind/media/... (the bindel and bindl)
+
+## Philosophy
+
+I would like there to be the least possible amount of entries on the main hyprland.conf and to be able to quickly find what I'm looking for going straight to the folder that contains it 
