@@ -9,6 +9,7 @@ USER_SERVICES=(
   swayosd-server.service
   awww-daemon.service
   input-remapper-rat7.service
+  hyprpolkitagent.service
   pipewire.service
   pipewire-pulse.service
   wireplumber.service
@@ -16,6 +17,7 @@ USER_SERVICES=(
 
 SYSTEM_SERVICES=(
   input-remapper.service
+  bluetooth.service
 )
 
 enable_user_service() {

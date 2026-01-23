@@ -1,8 +1,0 @@
-[Unit]
-Description=Hyprland user session services
-Wants=waybar.service dunst.service swayosd-server.service awww-daemon.service
-After=graphical-session-pre.target
-
-[Install]
-WantedBy=default.target
-
