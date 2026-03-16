@@ -11,8 +11,12 @@ echo "Running package installer..."
 echo "Configuring input-remapper permissions..."
 "$SCRIPT_DIR/inputRemapper.sh"
 
-echo "Installing Oh My Zsh..."
-RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  echo "Oh My Zsh already installed, skipping..."
+else
+  echo "Installing Oh My Zsh..."
+  RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 echo "Enabling services..."
 "$SCRIPT_DIR/services.sh"
