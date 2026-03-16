@@ -3,7 +3,7 @@
 tilix
 nautilus
 hyprlock
-awww-daemon
+swww
 dunst
 grim
 slurp
